@@ -1,12 +1,12 @@
 //Inspired in Codeforces 245525 Problem, Fractal
 var Fractals = [];
 var modelo = [];
-var time = 0, times = 4;
+var time = 0, times = Math.floor(Math.random() * 4) + 2;
 function setup() {
   createCanvas(600, 600);
   modelo = [];
   var M, n, n_x;
-  n = 3;
+  n = Math.floor(Math.random() * 2) + 2;
   n_x = n;
   M = [];
   var j, i, k ,aux_str = "";
