@@ -11,9 +11,13 @@ ps5js Animations inspired in Competitive Programming Problems
 [Try here :D](https://editor.p5js.org/lafifi/present/ND89OZzdJ)
 
 * Su Doku  - 989 UVa Problem
- * Link: https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=930
+  * Link: https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=930
  
 <p align="center">
+ <a href="https://imgflip.com/gif/3i1jbe"><img src="https://i.imgflip.com/3i1jbe.gif" title="made at imgflip.com"/></a>
+</p>   
+<p align="center">
+ <a href="https://imgflip.com/gif/3i1j84"><img src="https://i.imgflip.com/3i1j84.gif" title="made at imgflip.com"/></a>
 </p>  
 
 [Try here :D](https://editor.p5js.org/lafifi/present/nYsSBciOz)
