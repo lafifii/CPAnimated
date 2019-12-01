@@ -1,5 +1,5 @@
 # p5js-Animations
-ps5js Animations inspired in Competitive Programming Problems
+p5js Animations inspired in Competitive Programming Problems
 
 * Fractal - Codeforces Beta Round #36, Problem B
   * Link: https://codeforces.com/problemset/problem/36/B
