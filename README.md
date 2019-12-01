@@ -10,6 +10,9 @@ p5js Animations inspired in Competitive Programming Problems
 
 [Try here :D](https://editor.p5js.org/lafifi/present/ND89OZzdJ)
 
+* Feeding Chicken  - Codeforces Round #601 (Div. 2), Problem D
+  * Link: https://codeforces.com/contest/1255/problem/D
+  
 * Su Doku  - 989 UVa Problem
   * Link: https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=930
  
