@@ -1,17 +1,19 @@
-var fila, columna, cuad, esfijo, indice;
+var fila = [], columna = [], cuad, esfijo = [], indice;
 var sudoku_matriz = [], solution;
-var n = 2, it = 0;
-var phases = [];
+var n = Math.floor(Math.random()*2) + 2, it = 0;
+var phases = [], solutions = [];
 
 function setup() {
   createCanvas(400, 400);
   initialize();
-  frameRate(3);
+  frameRate(n*n/3);
   for(var i=0;i<n;++i){
     for(var j=0;j<n;++j)
-    {
-        
-        sudoku_matriz[i][j] = 0;
+    {      
+        if(Math.random() < 0.1)
+          sudoku_matriz[i][j] = Math.floor(Math.random()*n) + 1;
+        else
+          sudoku_matriz[i][j] = 0;
         if(sudoku_matriz[i][j] != 0){
           esfijo[i][j] = true;
           fila[i][sudoku_matriz[i][j] - 1] = true;
@@ -22,18 +24,8 @@ function setup() {
           esfijo[i][j] = false;
     }
   }
-  var aux = getMatrix();
-  phases.push(aux);
+  phases.push(getMatrix());
   sudoku(0,0);
-}
-function getMatrix(){
-  var m_aux = [];
-  for(var i = 0; i < n; ++i){
-    var mm_aux = [];
-    for(var j = 0; j < n; ++j) mm_aux.push(sudoku_matriz[i][j]);
-    m_aux.push(mm_aux);
-  }
-  return m_aux;
 }
 function draw() {
   
@@ -41,6 +33,7 @@ function draw() {
   var rows = Math.ceil(height/n);
   var columns = Math.ceil(width/n);
   
+  var is_solution = checkifsolution();
   for(var i = 0; i < n; ++i){
     for(var j = 0; j < n; ++j){
       var back = color('black');
@@ -52,12 +45,26 @@ function draw() {
       textSize(rows);
       fill('white');
       if((i + j)%2) fill('black');
-      if(phases[it][i][j] != 0)
-        text(phases[it][i][j], j*rows + 20, i*rows + 85);
+      if(is_solution) fill('red');
+      if(phases[it][i][j] != 0){
+        if(n == 9)
+          text(phases[it][i][j], j*rows + n, i*rows + n*4.5);
+        else
+          text(phases[it][i][j], j*rows + 20, i*rows + 85);
+      }
     }
   }
   
   it = (it + 1)%phases.length;
+}
+function getMatrix(){
+  var m_aux = [];
+  for(var i = 0; i < n; ++i){
+    var mm_aux = [];
+    for(var j = 0; j < n; ++j) mm_aux.push(sudoku_matriz[i][j]);
+    m_aux.push(mm_aux);
+  }
+  return m_aux;
 }
 function initialize(){
   solv = false;
@@ -65,21 +72,17 @@ function initialize(){
   n = n*n;
   var i, j, k;
   cuad = new Array(n);
-  fila = new Array(n);
-  columna = new Array(n);
-  esfijo = new Array(n);
-  cuad = new Array(n);
-  sudoku_matriz = new Array(n);
   for (i = 0; i < n; ++i) {
-    fila[i] = new Array(n);
-    columna[i] = new Array(n);
-    esfijo[i] = new Array(n);
+    fila.push([]);
+    columna.push([]);
+    esfijo.push([]);
+    sudoku_matriz.push([]);
     cuad[i] = new Array(n);
-    sudoku_matriz[i] = new Array(n);
     for (j = 0; j < n; ++j) {
-      fila[i][j] = false;
-      columna[i][j] = false;
-      esfijo[i][j] = false;
+      fila[i].push(false);
+      columna[i].push(false);
+      esfijo[i].push(false);
+      sudoku_matriz[i].push(false);
       cuad[i][j] = new Array(n);
       for (k = 0; k < n; ++k)
         cuad[i][j][k] = false;  
@@ -90,6 +93,7 @@ function sudoku(posx, posy){
   if(posx == n){
     solv = true;
     phases.push(getMatrix());
+    solutions.push(getMatrix());
     return;
   }
   if(posy == n){
@@ -102,6 +106,8 @@ function sudoku(posx, posy){
   }
   
   phases.push(getMatrix());
+  if(solutions.length >=5)
+    return;
   
   for(var i=0;i<n;++i){
     if(!fila[posx][i] && !columna[posy][i] && !cuad[int(posx/indice)][int(posy/indice)][i]){
@@ -119,4 +125,22 @@ function sudoku(posx, posy){
     }
   }
 
+}
+function matrixEqual(a, b) {
+  for(var i = 0; i < n; ++i){
+    for(var j = 0; j < n; ++j)
+      if(a[i][j] != b[i][j]){
+        frameRate(n*n/3);
+        return false;
+      }
+  }
+  frameRate(1);
+  return true;
+}
+function checkifsolution(){
+  for(var i = 0; i < solutions.length; ++i){
+    if(matrixEqual(solutions[i],phases[it]))
+      return true;
+  }
+  return false;
 }
