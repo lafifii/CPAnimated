@@ -10,7 +10,7 @@ function setup() {
   for(var i=0;i<n;++i){
     for(var j=0;j<n;++j)
     {      
-        if(Math.random() < 0.1)
+        if(Math.floor(Math.random()*n*10) == n)
           sudoku_matriz[i][j] = Math.floor(Math.random()*n) + 1;
         else
           sudoku_matriz[i][j] = 0;
@@ -48,9 +48,9 @@ function draw() {
       if(is_solution) fill('red');
       if(phases[it][i][j] != 0){
         if(n == 9)
-          text(phases[it][i][j], j*rows + n, i*rows + n*4.5);
+          text(phases[it][i][j], j*rows + n, i*rows + n*4.2);
         else
-          text(phases[it][i][j], j*rows + 20, i*rows + 85);
+          text(phases[it][i][j], j*rows + 15, i*rows + 85);
       }
     }
   }
