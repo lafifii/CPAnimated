@@ -1,23 +1,24 @@
 var letters = [], M = [], ans = [], states = [], colores = [];
-var n = 25;
-var m = 25;
-var k = 5, suma = 0, it = 0;
-var color1 = [255], color2 = [255], color3 = [255];
+var n = Math.floor(Math.random()* 6) + 10;
+var m = Math.floor(Math.random()* 6) + 10;
+var k = Math.floor(Math.random()* 8) + 3;
+var suma = 0, it = 0;
+var color1 = [0,255,255,255,181,51,51,134,236,108,19];
+var color2 = [0,51,193,252,255,255,125,51,51,118,61];
+var color3 = [0,51,51,51,51,240,255,255,255,118,134];
 
 function init(){
-  var i;
-  for(i = 0; i <= k; ++i){
+  var i, inter = int(256/k), cont_k = 0;
+  for(i = 0; i <= k; ++i)
       letters.push(i + 1);
-      color1.push(Math.floor(Math.random() * (256 - i*10) ));
-      color2.push(Math.floor(Math.random() * (256 - i*10) ));
-      color3.push(Math.floor(Math.random() * (256 - i*10) ));
-  }
   for(i=0;i<n;++i){
     var s_aux = "", zeros = [];
     for(var j=0;j<m;++j){ 
       var letra = '.';
-      if(Math.random() < 0.7)
+      if(Math.random() < 0.2 && cont_k < k){
         letra = 'R';
+        cont_k++;
+      }
       s_aux+=letra;
       zeros.push(0);
       if(s_aux[j] == 'R') suma++;
@@ -95,14 +96,20 @@ function setup() {
 }
 function draw() {
   background(220);
-  var rows = Math.floor(height/n), b;
-  var columns = Math.floor(width/m);
+  var rows = Math.ceil(height/n), b;
+  var columns = Math.ceil(width/m);
   for(var i = 0; i < n; ++i){
     for(var j = 0; j < m; ++j){
       var idx = states[it][i][j];
       b = color(color1[idx], color2[idx], color3[idx]);
       fill(b)
-      rect(j*rows, i*rows, rows, columns);
+      rect(j*columns, i*rows, columns, rows);
+      if(M[i][j] == 'R'){
+        var mid_x = ((j + 1)*columns + j*columns)/2;
+        var mid_y = ((i + 1)*rows + i*rows)/2;
+        line(mid_x,i*rows, mid_x, (i + 1)*rows);
+        line(j*columns, mid_y, (j+ 1)*columns, mid_y);
+      }
     }
   }
   it = (it + 1)%states.length;
