@@ -9,3 +9,11 @@ ps5js Animations inspired in Competitive Programming Problems
 </p>  
 
 [Try here :D](https://editor.p5js.org/lafifi/present/ND89OZzdJ)
+
+* Su Doku  - 989 UVa Problem
+ * Link: https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=930
+ 
+<p align="center">
+</p>  
+
+[Try here :D](https://editor.p5js.org/lafifi/present/nYsSBciOz)
