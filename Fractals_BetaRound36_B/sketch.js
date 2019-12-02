@@ -46,7 +46,7 @@ function repeat(num, thing){
     return arr;
 }
 function draw() {
-  background(220);
+  background(255);
   circle(100,100,20);
   var figure = Fractals[time], i, j;
   var rows = Math.ceil(height/figure.length);
@@ -57,7 +57,7 @@ function draw() {
       if(figure[i][j] == '*')
         c = color('white')
       fill(c)
-      rect(j*rows, i*rows, columns, rows);
+      rect(j*columns, i*rows, columns, rows);
     }
   }
   time = (time + 1)%times;
