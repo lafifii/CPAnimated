@@ -11,7 +11,7 @@ p5js Animations inspired in Competitive Programming Problems
 [Try here :D](https://editor.p5js.org/lafifi/present/ND89OZzdJ)
 
 * The House of Santa Claus - 291 UVa Problem
-   * Link: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=227
+   * Link: https://onlinejudge.org/external/2/291.pdf
  
 <p align="center">
 <a href="https://imgflip.com/gif/3i4m4r"><img src="https://i.imgflip.com/3i4m4r.gif" title="made at imgflip.com"/></a>
