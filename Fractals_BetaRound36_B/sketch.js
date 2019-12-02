@@ -57,7 +57,7 @@ function draw() {
       if(figure[i][j] == '*')
         c = color('white')
       fill(c)
-      rect(i*rows, j*rows, rows, columns);
+      rect(j*rows, i*rows, columns, rows);
     }
   }
   time = (time + 1)%times;
