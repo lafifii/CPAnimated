@@ -10,8 +10,17 @@ p5js Animations inspired in Competitive Programming Problems
 
 [Try here :D](https://editor.p5js.org/lafifi/present/ND89OZzdJ)
 
+* The House of Santa Claus - 291 UVa Problem
+   * Link: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=227
+ 
+<p align="center">
+<a href="https://imgflip.com/gif/3i4m4r"><img src="https://i.imgflip.com/3i4m4r.gif" title="made at imgflip.com"/></a>
+</p>
+
+[Try here :D](https://editor.p5js.org/lafifi/present/FxoDweUer)
+ 
 * Feeding Chicken  - Codeforces Round #601 (Div. 2), Problem D
-  * Link: https://codeforces.com/contest/1255/problem/D
+   * Link: https://codeforces.com/contest/1255/problem/D
 
 <p align="center">
 <a href="https://imgflip.com/gif/3i3f81"><img src="https://i.imgflip.com/3i3f81.gif" title="made at imgflip.com"/></a>
