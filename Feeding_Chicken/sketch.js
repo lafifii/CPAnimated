@@ -1,4 +1,4 @@
-var letters = [], M = [], ans = [], states = [], colores = [];
+var letters = [], M = [], ans = [], colores = [];
 var n = Math.floor(Math.random()* 10) + 3;
 var m = Math.floor(Math.random()* 10) + 3;
 var k = Math.floor(Math.random()* 8) + 3;
@@ -51,7 +51,6 @@ function solve(){
 		          if(suma) c1++;
 	            }
             }
-            states.push(getMatrix());
 	     }
       }
       else{
@@ -73,12 +72,9 @@ function solve(){
 		       if(suma) c1++;
 	         }
 	       }
-          states.push(getMatrix());
         }
       }
     }
-  states.push(getMatrix());
-  
 }
 function getMatrix(){
   var m_aux = [];
@@ -90,7 +86,7 @@ function getMatrix(){
   return m_aux;
 }
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   init();
   solve();
   frameRate(n*m/k);
@@ -98,11 +94,13 @@ function setup() {
 function draw() {
   background(0,0,0);
   var rows = Math.floor(height/n), b;
-  var columns = Math.floor(width/m);
+  var columns = Math.floor(width/m), c = 0;
   for(var i = 0; i < n; ++i){
     for(var j = 0; j < m; ++j){
-      var idx = states[it][i][j];
+      var idx = ans[i][j];
       b = color(color1[idx], color2[idx], color3[idx]);
+      if(c > it)
+        b = color(0,0,0);
       fill(b)
       rect(j*columns, i*rows, (j + 1)*columns - j*columns, (i + 1)*rows - i*rows);
       if(M[i][j] == 'R'){
@@ -111,7 +109,8 @@ function draw() {
         line(mid_x,i*rows, mid_x, (i + 1)*rows);
         line(j*columns, mid_y, (j+ 1)*columns, mid_y);
       }
+      c++;
     }
   }
-  it = (it + 1)%states.length;
+  it = (it + 1)%(n*m);
 }
