@@ -18,7 +18,18 @@ p5js Animations inspired in Competitive Programming Problems
 </p>
 
 [Try here :D](https://editor.p5js.org/lafifi/present/FxoDweUer)
- 
+
+* Part - Codeforces Beta Round #87 (Div. 1 Only), Problem A
+  * Link: https://codeforces.com/problemset/problem/115/A
+
+
+<p align="center">
+<a href="https://imgflip.com/gif/3ieydy"><img src="https://i.imgflip.com/3ieydy.gif" title="made at imgflip.com"/></a>
+</p>
+
+[Try here :D](https://editor.p5js.org/lafifi/present/zrODl6Lhb)
+
+
 * Feeding Chicken  - Codeforces Round #601 (Div. 2), Problem D
    * Link: https://codeforces.com/contest/1255/problem/D
 
